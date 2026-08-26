@@ -1,0 +1,3 @@
+package dev.rodrigosambade.sprint;
+import org.junit.jupiter.api.Test;import java.time.Duration;import java.util.*;import java.util.random.RandomGeneratorFactory;import static org.junit.jupiter.api.Assertions.*;
+class SprintRaceTest{@Test void returnsEveryRunnerSorted()throws Exception{var a=List.of(new SprintRace.Athlete("A",1),new SprintRace.Athlete("B",2),new SprintRace.Athlete("C",3));var r=new SprintRace(a,RandomGeneratorFactory.<java.util.random.RandomGenerator>of("L64X128MixRandom").create(1)).run(Duration.ZERO,Duration.ofMillis(2));assertEquals(3,r.size());for(int i=1;i<r.size();i++)assertTrue(r.get(i-1).seconds()<=r.get(i).seconds());}}
